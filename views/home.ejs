@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Cat Gallery</title>
+	</head>
+	<body>
+		%- include('partials/navbar') %
+
+		<div>
+			<div>
+				% cats.forEach(cat => { %
+				<div>
+					<div>
+						<img src="/images/<%= cat.image %>" alt="Card image cap" />
+						<div>
+							<h5>%= cat.name %</h5>
+							<p>
+								Age: %= cat.age %
+								<br />
+								Favorite food: %= cat.favoriteFood %
+								<br />
+								Fun fact: %= cat.funFact %
+							</p>
+						</div>
+						<div>
+							<a href="/edit/<%= cat._id %>">Edit</a>
+							<form action="/delete/<%= cat._id %>" method="POST">
+								<button type="submit">Delete</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				% }); %
+			</div>
+		</div>
+	</body>
+</html>
