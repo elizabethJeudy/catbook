@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// grabs user input data from mongo database
 const catSchema = new mongoose.Schema({
 	name: String,
 	age: Number,
