@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-// reads the database
+// reads the database, displays homepage and renders cat cards
 const getAllCats = async (req, res) => {
 	try {
 		const cats = await Cat.find();
