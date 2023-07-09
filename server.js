@@ -4,8 +4,9 @@ const path = require("path");
 const app = express();
 const connectDB = require("./config/connectDB");
 const passport = require("passport");
+const session = require("express-session");
 // for local auth
-const localStrategy = require("passport-local").Strategy;
+const LocalStrategy = require("passport-local").Strategy;
 const User = require("./models/userModel");
 // const catRoutes = require("./routes/catRoutes");
 const mongoose = require("mongoose");
